@@ -1,14 +1,16 @@
 import Controller.FileAccessor;
-import model.Article;
-import model.Revista;
-import view.Menu;
+import Model.Article;
+import Model.Revista;
+import View.Menu;
 
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainMagacine {
     public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
         ArrayList<Revista> revistes = new ArrayList();
         FileAccessor fa;
 
@@ -25,14 +27,32 @@ public class MainMagacine {
                 fa=new FileAccessor();
                 try {
                     fa.readAutorsFile("src/main/java/autors.txt");
-                 //   fa.printAutors();
-                   // fa.readMagazinesFile("src/main/java/revistes.txt");
-                    //fa.printRevistes();
-                    //revistes=fa.readArticlesFile("src/main/java/articles.txt");
-                    //mostraRevistes(revistes);
+                    System.out.println();
+                    System.out.println("Autors");
+                    fa.printAutors();
+                    fa.readMagazinesFile("src/main/java/revistes.txt");
+                    System.out.println();
+                    System.out.println("Revistas");
+                    fa.printRevistes();
+                    System.out.println();
+                    System.out.println("Articles");
+                    revistes=fa.readArticlesFile("src/main/java/articles.txt");
+                    mostraRevistes(revistes);
                 } catch (NumberFormatException | IOException e) {
 
                     e.printStackTrace();
+                }
+                break;
+            case 2:
+                System.out.println("1.Seleccionar revista.");
+                System.out.println("2.Seleccionar article");
+                int op = sc.nextInt();
+                switch (op){
+                    case 1:
+                        break;
+
+                    case 2:
+                        break;
                 }
                 break;
 

@@ -1,7 +1,7 @@
-package model;
+package Model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class Revista implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Revista [id_revista=" + id_revista +",titol=" + titol + ", data_publicacio="
+        return "Model.Revista [id_revista=" + id_revista +",titol=" + titol + ", data_publicacio="
                 + data_publicacio.toString() + "]";
     }
 }

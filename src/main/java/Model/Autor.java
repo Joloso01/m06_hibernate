@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 import java.io.Serializable;
 
@@ -52,7 +52,7 @@ public class Autor implements Serializable {
     }
     @Override
     public String toString() {
-        return "model.Autor [id_autor=" + id_autor + ", nom=" + nom+ ", any_naixement=" + any_naixement
+        return "Model.Autor [id_autor=" + id_autor + ", nom=" + nom+ ", any_naixement=" + any_naixement
                 + ", nacionalitat=" + nacionalitat + ", actiu=" + actiu
                 + "]";
     }

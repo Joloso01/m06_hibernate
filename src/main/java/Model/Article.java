@@ -1,7 +1,7 @@
-package model;
+package Model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 public class Article implements Serializable {
     int id_article;
@@ -58,7 +58,7 @@ public class Article implements Serializable {
     }
     @Override
     public String toString() {
-        return "model.Article [id_article=" + id_article + ", titol=" + titol
+        return "Model.Article [id_article=" + id_article + ", titol=" + titol
                 + ", data_creacio=" + data_creacio + ", publicable="
                 + publicable + "]";
     }

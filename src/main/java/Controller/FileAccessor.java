@@ -1,8 +1,8 @@
 package Controller;
 
-import model.Article;
-import model.Autor;
-import model.Revista;
+import Model.Article;
+import Model.Autor;
+import Model.Revista;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class FileAccessor {
-    ArrayList<Autor> llistaAutors = new ArrayList();
-    ArrayList<Revista> llistaRevistes = new ArrayList();
+    public ArrayList<Autor> llistaAutors = new ArrayList();
+    public ArrayList<Revista> llistaRevistes = new ArrayList();
 
     public FileAccessor() {
     }
@@ -55,7 +55,6 @@ public class FileAccessor {
 
         }
         br.close();
-        System.out.println("-------------------asdffasdfadasf-----");
     }
 
     public void printAutors() {
@@ -100,9 +99,9 @@ public class FileAccessor {
             id = Integer.parseInt(str.nextToken());
             titol = str.nextToken();
             try {
-                date = (Date) dateformat.parse(str.nextToken());
+                date = dateformat.parse(str.nextToken());
                 // TODO
-                // Cal afegir un objecte Magazine a la llista
+                llistaRevistes.add(new Revista(id,titol,date));
 
 
             } catch (ParseException e) {
@@ -169,7 +168,7 @@ public class FileAccessor {
 
             for(Revista revista1 : llistaRevistes){
                 if (revista1.getId_revista() == idRevista){
-                    revista1.addArticle(new Article(idArticle,titol, (java.sql.Date) data_creacio,publicable,autor));
+                    revista1.addArticle(new Article(idArticle,titol,data_creacio,publicable,autor));
                 }
             }
 
